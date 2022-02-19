@@ -6,7 +6,6 @@ const WorkingState = (props) => {
     alert("website is in developoning state");
   };
   const customtoast = (msg, state) => {
-    console.log("working");
     if (state === "success") {
       toast.success(msg);
     } else if (state === "info") {

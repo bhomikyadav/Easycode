@@ -69,9 +69,9 @@ const ContactForm = () => {
         const data = await responce.json();
 
         if (data.result) {
-          mycontext.customtoast("message send", "success");
           setloading(false);
           navigate("/");
+          mycontext.customtoast("message send", "success");
         } else {
           mycontext.customtoast("Error 404 Msg is not send", "error");
         }
@@ -171,4 +171,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm
+export default ContactForm;

@@ -40,7 +40,6 @@ function App() {
                       <Navbar />
                       <Homepage />
                       <Footer />
-                      <ToastContainer theme="colored" />
                     </div>
                   )}
                 </>
@@ -53,6 +52,7 @@ function App() {
               <Route path="/demo/site3" element={<Demothird />} />
             </Route>
           </Routes>
+          <ToastContainer theme="colored" />
         </BrowserRouter>
       </WorkingState>
     </>
