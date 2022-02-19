@@ -33,7 +33,7 @@ function App() {
                 <>
                   {loading ? (
                     <>
-                      <Spinner loading={loading} />
+                      <Spinner loading={loading} msg="Welcome to " />
                     </>
                   ) : (
                     <div className="App">
