@@ -1,5 +1,5 @@
 .mainclass {
-  margin: 25%;
+  margin: 0 25%;
   width: 50%;
   padding: auto;
   text-align: center;
@@ -20,6 +20,7 @@
   background-position: top right;
   color: #408ba8;
   font-size: 50px;
+  margin-top: 10%;
   font-family: "Lobster", cursive;
   text-align: center;
 }
