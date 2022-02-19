@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../css/Homepage.css";
 import { Link } from "react-router-dom";
 import BlurLinearIcon from "@mui/icons-material/BlurLinear";
@@ -6,8 +6,10 @@ import InsightsIcon from "@mui/icons-material/Insights";
 import RecommendIcon from "@mui/icons-material/Recommend";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-
+import Workingcontext from "../contexts/workngalert/workingcontext";
 function Homepage() {
+  const mycontext = useContext(Workingcontext);
+
   return (
     <div className="homepage">
       <section className="s1">
@@ -18,10 +20,9 @@ function Homepage() {
             <b>simple</b>.
           </h1>
           <button className="btn">
-            <Link to="/contactus" style={{color:'white'}}>
+            <Link to="/contactus" style={{ color: "white" }}>
               Free consultation
             </Link>
-           
           </button>
         </div>
       </section>
@@ -127,7 +128,10 @@ function Homepage() {
             your site as you want. You can choose design from our catalogue or
             can give your own designs as per your requirement.
           </p>
-          <button className="btn">What we can do for you</button>
+
+          <button className="btn">
+            <Link to="/contactus">What we can do for you</Link>
+          </button>
         </div>
       </section>
       <section className="s4" id="catalogue">
@@ -192,24 +196,29 @@ function Homepage() {
           <h1>Ready to Launch your next website?</h1>
           <div className="s5d1">
             <button className="btn">
-              <Link to="/contactus" style={{color:'white'}} >
-              <MailOutlineIcon className="mail" />
-              Get in touch now!
+              <Link to="/contactus" style={{ color: "white" }}>
+                <MailOutlineIcon className="mail" />
+                Get in touch now!
               </Link>
-              
             </button>
             <p>
               Or, take a peek in our{" "}
-              <a
-                href="/"
+              <Link
+                to="/"
                 style={{
                   fontWeight: "bold",
                   color: "#6610f2",
                   textDecoration: "underline",
                 }}
+                onClick={() => {
+                  mycontext.customtoast(
+                    "website in development state ",
+                    "warn"
+                  );
+                }}
               >
                 design studio
-              </a>
+              </Link>
             </p>
           </div>
         </div>
